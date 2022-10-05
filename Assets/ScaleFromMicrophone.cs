@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class ScaleFromMicrophone : MonoBehaviour
 {
@@ -9,12 +10,12 @@ public class ScaleFromMicrophone : MonoBehaviour
     public Vector3 maxScale;
     public AudioLoudnessDetection detector;
 
-    public float loudnessSensibility = 1;
-    public float threshold = 0.5f;
+    public float loudnessSensibility = 50;
+    public float threshold = 1.0f;
     // Start is called before the first frame update
     void Start()
     {
-        
+        threshold *=10;
     }
 
     // Update is called once per frame
@@ -22,7 +23,12 @@ public class ScaleFromMicrophone : MonoBehaviour
     {
         float loudness = detector.GetLoudnessFromMicrophone() * loudnessSensibility;
         if(loudness < threshold)
+        {
             loudness = 0;
-        transform.localScale = Vector3.Lerp(minScale, maxScale, loudness);
+            Debug.Log("caught");
+        }else{
+            Debug.Log(loudness);
+        }
+        transform.localScale = Vector3.Lerp(minScale, maxScale, loudness/10);
     }
 }
