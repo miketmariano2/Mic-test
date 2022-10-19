@@ -1,6 +1,6 @@
-# Mic-test
+# Mic-test Level_Design Branch
 
-Changes made in consolidation pre 5PM build on 10/19: Check Level_Design Branch!
+Changes made in consolidation pre 5PM build on 10/19:
 - consolidated echolocation shader branch with Joi's level branch
 - lightly modded FPS controller
 - echolocation generation is now through pressing the key m (stand in for mic)
