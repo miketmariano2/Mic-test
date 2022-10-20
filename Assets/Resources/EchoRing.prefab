@@ -110,4 +110,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b2f5b51ae44fcd48bc2b67ce7392e92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sonarSpeed: 1
+  sonarSpeed: 5
