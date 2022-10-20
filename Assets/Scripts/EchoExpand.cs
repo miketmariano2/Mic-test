@@ -10,7 +10,7 @@ public class EchoExpand : MonoBehaviour
     {
         transform.localScale = new Vector3(initSize, initSize, initSize);
         StartCoroutine(Expand());
-        print(maxSize);
+        // print(maxSize);
     }
 
     //contnineus to expand echolocation wave till reached the sound capacity, and promptly deletes self for time management
@@ -19,7 +19,7 @@ public class EchoExpand : MonoBehaviour
         while (transform.localScale.x <= maxSize.x)
         {
             transform.localScale += new Vector3(sonarSpeed, sonarSpeed, sonarSpeed) * Time.deltaTime;
-            print("expanding");
+            // print("expanding");
             yield return null;
         }
         Destroy(this.gameObject);
